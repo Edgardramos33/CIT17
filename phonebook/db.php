@@ -1,6 +1,6 @@
 <?php
-    $servername="";
-    $username="";
+    $servername="localhost";
+    $username="root";
     $password="";
     $dbname="phonebook";
 
@@ -9,4 +9,4 @@
     if ($conn->connect_error){
         die ("Connection failed". $conn->connect_error);
     }
-?>
+?>;

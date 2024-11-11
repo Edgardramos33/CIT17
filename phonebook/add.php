@@ -1,22 +1,24 @@
-<br?php 
-    include 'db.php';
+<?php 
+    include 'db.php';  
     
-    if ($_SERVER["REQUEST_METHOD"]=="POST") {
-        $name =$_POST['name'];
-        $phone =$_POST['phone'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST['name'];   
+        $phone = $_POST['phone']; 
 
-        if (!empty($name)&& !empty($phone)){
-            $sql= "INSERT INTO contacts (name,phone) VALUES ('$name' ,'$phone')";
+       
+        if (!empty($name) && !empty($phone)) {
+            
+            $sql = "INSERT INTO contacts (name, phone) VALUES ('$name', '$phone')";
 
-            if ($conn->query($sql)=== TRUE){
-                echo "New contaact added successfuly!";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "New contact added successfully!";  
+            } else {
+                echo "Failed to add new contact.";  
             }
-            else{
-                echo "Failed to add new contact.";
-            }
+        } else {
+            echo "Please fill in all fields."; 
         }
-        else{
-            echo "Please fill in all fields.";
     }
 ?>
 
@@ -30,13 +32,12 @@
 <body>
     <h2>Add a new contact</h2>
 
-    < method = "post" action = "add.php" >
+    <form method="post" action="add.php">
         Name: <input type="text" name="name"><br><br>
         Phone: <input type="text" name="phone"><br><br>
         <input type="submit" value="Add contact">
-
-
     </form>
+
     <a href="index.php">Back to phonebook</a>
 </body>
 </html>
