@@ -1,0 +1,25 @@
+* {
+    text-decoration: none;
+}
+main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    text-align: center;
+}
+h2, table, button {
+    margin: 10px;
+}
+.add {
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: green;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    height: 30px;
+}
